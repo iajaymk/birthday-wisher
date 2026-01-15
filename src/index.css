@@ -1,0 +1,79 @@
+/* Layout */
+.cake-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.cake {
+  position: relative;
+}
+
+.cake-top {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 20px;
+  display: flex;
+  gap: 14px;
+  z-index: 2;
+}
+
+/* Candle */
+.candle {
+  width: 12px;
+  height: 40px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 4px,
+    #ff69b4 4px,
+    #ff69b4 8px
+  );
+  border-radius: 4px;
+  position: relative;
+}
+
+.wick {
+  width: 2px;
+  height: 6px;
+  background: #333;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Flame */
+.flame {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flame-inner {
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(circle at 50% 30%, #fff6a9, #ff9800, #ff5722);
+  border-radius: 50% 50% 50% 50%;
+  animation: flicker 0.15s infinite alternate;
+  filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.8));
+}
+
+@keyframes flicker {
+  0% {
+    transform: scaleY(1) rotate(-2deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scaleY(1.1) rotate(2deg);
+    opacity: 1;
+  }
+}
