@@ -5,6 +5,7 @@ import { fireConfetti } from "./components/Effects/Confetti";
 import HappyBirthday from "./components/Balloons/HappyBirthday";
 import "./styles/balloons.css";
 import "./styles/background.css";
+import "./styles/cake.css";
 import Background from "./components/Background/Background";
 
 function App() {
