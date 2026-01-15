@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import Cake from "./components/Cake/Cake";
 import useBlowDetector from "./hooks/useBlowDetector";
 import { fireConfetti } from "./components/Effects/Confetti";
+import HappyBirthday from "./components/Balloons/HappyBirthday";
+import "./styles/balloons.css";
+import "./styles/background.css";
+import Background from "./components/Background/Background";
 
 function App() {
   const [blown, setBlown] = useState(false);
@@ -17,15 +21,11 @@ function App() {
   }, [blown]);
 
   return (
-    <>
-      <div className="">
-        {/* <h2 style={{ textAlign: "center", color: "#fff" }}>
-          Make a wish & blow the candles 🎂
-        </h2> */}
+    <Background>
+      <HappyBirthday />
 
-        <Cake candles={8} blown={blown} />
-      </div>
-    </>
+      <Cake candles={8} blown={blown} />
+    </Background>
   );
 }
 

@@ -1,0 +1,43 @@
+.happy-birthday {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.balloon-letter {
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+}
+
+.balloon-letter:nth-child(even) {
+  animation-duration: 5s;
+}
+
+.balloon-letter:nth-child(odd) {
+  animation-duration: 3.8s;
+}
+
+.balloon-space {
+  width: 20px;
+}
+
+.balloon-string {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(#ccc, transparent);
+  margin: 0 auto;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

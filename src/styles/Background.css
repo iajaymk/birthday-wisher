@@ -1,0 +1,60 @@
+/* Full-page background */
+.background {
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.15),
+      transparent 60%
+    ),
+    linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Foreground content */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating balloons container */
+.floating-balloons {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Balloon shape */
+.bg-balloon {
+  position: absolute;
+  bottom: -120px;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 45% 45%;
+  opacity: 0.25;
+  filter: blur(1px);
+  animation: float-up linear infinite;
+}
+
+/* Balloon knot */
+.bg-balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 6px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+@keyframes float-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
+}
