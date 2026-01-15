@@ -7,6 +7,7 @@ import "./styles/balloons.css";
 import "./styles/background.css";
 import "./styles/cake.css";
 import Background from "./components/Background/Background";
+import Home from "./pages/Home";
 
 function App() {
   const [blown, setBlown] = useState(false);
@@ -22,11 +23,14 @@ function App() {
   }, [blown]);
 
   return (
-    <Background>
-      <HappyBirthday />
+    // <Background>
+    //   <HappyBirthday />
 
-      <Cake age={9} blown={blown} />
-    </Background>
+    //   <Cake age={9} blown={blown} />
+    // </Background>
+    <>
+      <Home />
+    </>
   );
 }
 
