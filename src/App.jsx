@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cake from "./components/Cake/Cake";
 import useBlowDetector from "./hooks/useBlowDetector";
+import { fireConfetti } from "./components/Effects/Confetti";
 
 function App() {
   const [blown, setBlown] = useState(false);
@@ -8,6 +9,13 @@ function App() {
   useBlowDetector(() => {
     setBlown(true);
   });
+
+  useEffect(() => {
+    if (blown) {
+      fireConfetti();
+    }
+  }, [blown]);
+
   return (
     <>
       <div className="">
