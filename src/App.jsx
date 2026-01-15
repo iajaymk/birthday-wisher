@@ -24,7 +24,7 @@ function App() {
     <Background>
       <HappyBirthday />
 
-      <Cake candles={8} blown={blown} />
+      <Cake age={9} blown={blown} />
     </Background>
   );
 }
