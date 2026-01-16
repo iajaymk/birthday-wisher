@@ -14,6 +14,7 @@ export default defineConfig({
         "src/components"
       ),
       "#lib": resolve(dirname(fileURLToPath(import.meta.url)), "src/lib"),
+      "#hooks": resolve(dirname(fileURLToPath(import.meta.url)), "src/hooks"),
     },
   },
 });

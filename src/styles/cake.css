@@ -19,7 +19,7 @@
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  top: 20px;
+  top: 1px;
   display: flex;
   gap: 14px;
   z-index: 2;
