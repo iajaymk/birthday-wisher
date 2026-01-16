@@ -1,3 +1,5 @@
+import { Button } from "#components/ui/button";
+
 const Home = () => {
   return (
     <div className="grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 h-screen place-items-center gap-4">
@@ -5,7 +7,8 @@ const Home = () => {
       <div className="flex justify-center items-center flex-col gap-4">
         <h1 className="text-4xl">Birthday Wisher</h1>
         <p className="text-2xl">Send birthday wishes to your loved ones</p>
-        <button>Create a Wish</button>
+        {/* <button>Create a Wish</button> */}
+        <Button variant="outline">Create a Wish</Button>
       </div>
     </div>
   );
