@@ -1,0 +1,182 @@
+/* Layout */
+.cake-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.cake {
+  position: relative;
+}
+
+.cake-top {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 1px;
+  display: flex;
+  gap: 14px;
+  z-index: 2;
+}
+
+/* Candle */
+.candle {
+  width: 12px;
+  height: 40px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 4px,
+    #ff69b4 4px,
+    #ff69b4 8px
+  );
+  border-radius: 4px;
+  position: relative;
+}
+
+.wick {
+  width: 2px;
+  height: 6px;
+  background: #333;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Flame */
+.flame {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flame-inner {
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(circle at 50% 30%, #fff6a9, #ff9800, #ff5722);
+  border-radius: 50% 50% 50% 50%;
+  animation: flicker 0.15s infinite alternate;
+  filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.8));
+}
+
+@keyframes flicker {
+  0% {
+    transform: scaleY(1) rotate(-2deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scaleY(1.1) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+/* Smoke */
+.smoke {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.smoke span {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background: rgba(200, 200, 200, 0.6);
+  border-radius: 50%;
+  filter: blur(4px);
+  animation: smoke-rise 2s ease-out forwards;
+}
+
+.smoke span:nth-child(1) {
+  animation-delay: 0s;
+  left: -6px;
+}
+
+.smoke span:nth-child(2) {
+  animation-delay: 0.3s;
+  left: 0;
+}
+
+.smoke span:nth-child(3) {
+  animation-delay: 0.6s;
+  left: 6px;
+}
+
+@keyframes smoke-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-40px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Digit candles */
+/* .digit-candle {
+  position: relative;
+  width: 36px;
+  height: 52px;
+  background: linear-gradient(#ffd166, #fca311);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 28px;
+  color: #fff;
+  box-shadow: inset -4px -6px rgba(0, 0, 0, 0.2);
+} */
+
+/* .digit-body {
+  z-index: 1;
+} */
+
+/* Adjust flame position for digit */
+/* .digit-candle .flame {
+  top: -30px;
+} */
+
+/* Digit candle wrapper */
+.digit-candle-wrapper {
+  position: relative;
+  width: 60px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* SVG digit */
+.digit-svg {
+  width: 60px;
+  height: 90px;
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* Wick on top of digit */
+.digit-wick {
+  position: absolute;
+  top: 4px;
+  width: 2px;
+  height: 8px;
+  background: #333;
+  z-index: 2;
+}
+
+/* Flame position for digit candle */
+.digit-candle-wrapper .flame {
+  top: -22px;
+}
