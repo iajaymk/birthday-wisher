@@ -38,7 +38,7 @@ export default function useBlowDetector(onBlow) {
       }
       const volume = sum / dataArray.length;
 
-      if (volume > 80 && !hasBlown.current) {
+      if (volume > 60 && !hasBlown.current) {
         hasBlown.current = true;
         onBlow();
       }
