@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/button';
+
 const Home = () => {
   return (
     <div>
@@ -19,9 +21,7 @@ const Home = () => {
           </p>
 
           <div>
-            <button variant="hero" size="xl" className="group">
-              Create a Birthday Wish
-            </button>
+            <Button variant="outline">Create a Birthday Wish</Button>
           </div>
 
           <div className="mt-16 flex items-center justify-center gap-6 text-sm text-muted-foreground">
