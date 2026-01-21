@@ -1,6 +1,28 @@
+import CreateWishForm from '@/components/CreateWishForm';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import { useState } from 'react';
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
+  const isDesktop = useMediaQuery();
+
   return (
     <div>
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
@@ -16,13 +38,41 @@ const Home = () => {
             Birthday Wisher
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto mb-10 leading-relaxed">
+          <div className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto mb-10 leading-relaxed">
             Send magical birthday wishes to your loved ones — just with a link.
-          </p>
-
-          <div>
-            <Button variant="outline">Create a Birthday Wish</Button>
           </div>
+
+          {isDesktop ? (
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <Button variant="outline">Create a Birthday Wish</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[550px] p-6 bg-white">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-semibold text-foreground">
+                    Create a Birthday Wish 🎂
+                  </DialogTitle>
+                  <DialogDescription></DialogDescription>
+                </DialogHeader>
+                <CreateWishForm />
+              </DialogContent>
+            </Dialog>
+          ) : (
+            <Drawer open={open} onOpenChange={setOpen}>
+              <DrawerTrigger asChild>
+                <Button variant="outline">Create a Birthday Wish</Button>
+              </DrawerTrigger>
+              <DrawerContent className="bg-white">
+                <DrawerHeader className="text-left">
+                  <DrawerTitle>Create a Birthday Wish 🎂</DrawerTitle>
+                  <DrawerDescription></DrawerDescription>
+                </DrawerHeader>
+                <div className="px-4 mb-6">
+                  <CreateWishForm />
+                </div>
+              </DrawerContent>
+            </Drawer>
+          )}
 
           <div className="mt-16 flex items-center justify-center gap-6 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
