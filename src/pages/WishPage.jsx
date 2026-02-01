@@ -7,7 +7,7 @@ const WishPage = () => {
   const age = searchParams[0].get('age') || 'unknown';
 
   return (
-    <div className="min-h-screen gradient-hero relative overflow-hidden flex items-center justify-center p-6">
+    <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-6">
       <div className="relative z-10 text-center max-w-lg mx-auto">
         <div className="">
           <h1 className="text-3xl md:text-4xl font-bold">
